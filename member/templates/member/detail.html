@@ -1,0 +1,10 @@
+<h1>{{member.subj}}</h1>
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<form action="{% url 'member:detail' member.id %}" method="post">
+
+	<input type="text" name="name" readonly value="{{member.name}}"/>
+	<input type="text" name="born" readonly value="{{member.born}}"/>
+	<input type="datetime" name="wdate" readonly value="{{member.wdate}}"/>
+
+	<input type="submit" value="저장"/>
+</form>

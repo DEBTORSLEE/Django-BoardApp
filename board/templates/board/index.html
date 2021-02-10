@@ -1,0 +1,11 @@
+<input type="button" value="글쓰기" onClick="location.href='{% url 'board:new' %}'"/>
+
+{% if board_list %}
+	<ul>
+	{% for board in board_list %}
+		<li><a href="{% url 'board:detail' board.board_id %}">{{board.subj}}</a></li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<p>No board are available</p>
+{% endif %}

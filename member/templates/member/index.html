@@ -1,0 +1,7 @@
+{% if member_list %}
+	{% for member in member_list %}
+		<a href="{% url 'member:detail' member.id %}">{{ member.name }}</a> {{ member.wdate }} <br>
+	{% endfor %}
+{% else %}
+	empty
+{% endif %}

@@ -1,0 +1,11 @@
+
+<form action="{% url 'board:edit' board.board_id %}" method="post">{{ csrf_input }}
+	번호<input type="text" readonly name="board_id" value="{{ board.board_id }}"/>
+	제목<input type="text" readonly name="subj" value="{{board.subj}}"/>
+	내용<input type="text" readonly name="cont" value="{{board.cont}}"/>
+	조회수<input type="number" readonly name="hit" value="{{ board.hit }}"/>
+	작성일<input type="datetime" readonly name="wdate" value="{{ board.wdate }}"/>
+
+	<input type="submit" value="수정"/>
+	<input type="button" value="삭제" onclick="location.href='{% url 'board:delete' board.board_id %}'"/>
+</form>
